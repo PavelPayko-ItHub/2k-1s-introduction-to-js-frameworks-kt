@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import {
     getCartProducts,
     getSubTotal,
-//    removeCartItem,
     getCartCount,
     increment,
     decrement,

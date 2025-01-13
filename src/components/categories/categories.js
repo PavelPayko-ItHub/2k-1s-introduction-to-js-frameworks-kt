@@ -16,24 +16,6 @@ const Img = (class_id, src_in, alt_in, key_in) => {
     return <img className={class_id} src={src_in} alt={alt_in} key={key_in} />
 }
 
-function CategoriesVisualize({data, endpoint}) {
-    var arr = []
-    for (var i = 0; i < data.length; i++) {
-        console.log(data[i]);
-        arr.push(
-            Link(
-                [
-                    Img('category__img', `${endpoint.concat('', data[i].image)}`, 'alt', `${i + 1}`),
-                    Span('category__text', `${data[i].title}`, `${(i + 1) * 2}`)
-                ],
-                `/categories/${data[i].id}`, 'category'
-            ) )
-    }
-    return (
-        <div className="fx category-wrap">{arr}</div>
-    )
-}
-
 export const Categories = ({endpoint, target}) => {
 
     const [data, setData] = useState(null);

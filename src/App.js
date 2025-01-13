@@ -8,6 +8,7 @@ import {Categories} from './components/categories'
 import {Category} from './components/category'
 import {Cart} from './components/cart'
 import {Main} from './components/main'
+import { NotFound } from './components/not-found'
 
 function App() {
   const endpoint = 'http://localhost:3333';
@@ -23,6 +24,7 @@ function App() {
         <Route path="/categories" element={<Categories endpoint={endpoint} target={target_categories_all}/>} />
         <Route path="categories/:id" element={<Category endpoint={endpoint}/>} />
         <Route path="/cart" element={<Cart />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer/>
     </div>
